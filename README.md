@@ -25,5 +25,7 @@
 >>> df['kmeans_labels'] = df['pca'].pipe(hero.kmeans, n_clusters=5)
 >>> 
 >>> # Plot
->>> hero.scatterplot(df, 'pca', color='kmeans_labels', hover_data=["text_preprocessed"], title="BBC Sport news dataset")
+>>> hero.scatterplot(
+... df, 'pca', color='kmeans_labels', hover_data=["text_preprocessed"], title="BBC Sport news dataset")
+... )
 ```
