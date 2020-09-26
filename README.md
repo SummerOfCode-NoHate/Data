@@ -28,5 +28,18 @@
 
 [737 rows x 1 columns]
 
-
+>>> # Clean and tokenize all documents.
+>>> df['text_preprocessed'] = df['text'].pipe(hero.clean).pipe(hero.tokenize)
+>>> 
+>>> # Calculate a vector representation of the documents using TF-IDF
+>>> df_tfidf = df['text_preprocessed'].pipe(hero.tfidf)
+>>> 
+>>> # Find a lower-dimensional representation through PCA
+>>> df["pca"] = df_tfidf.pipe(hero.normalize, norm="l2").pipe(hero.pca)
+>>> 
+>>> # Find clusters ("topics") in the documents with KMeans.
+>>> df['kmeans_labels'] = df['tfidf'].pipe(hero.kmeans, n_clusters=5)
+>>> 
+>>> # Plot
+>>> hero.scatterplot(df, 'pca', color='kmeans_labels', title="BBC Sport news dataset")
 ```
