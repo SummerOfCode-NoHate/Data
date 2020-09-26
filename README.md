@@ -22,8 +22,8 @@
 >>> df["pca"] = df_tfidf.pipe(hero.normalize, norm="l2").pipe(hero.pca)
 >>> 
 >>> # Find clusters ("topics") in the documents with KMeans.
->>> df['kmeans_labels'] = df['tfidf'].pipe(hero.kmeans, n_clusters=5)
+>>> df['kmeans_labels'] = df['pca'].pipe(hero.kmeans, n_clusters=5)
 >>> 
 >>> # Plot
->>> hero.scatterplot(df, 'pca', color='kmeans_labels', title="BBC Sport news dataset")
+>>> hero.scatterplot(df, 'pca', color='kmeans_labels', hover_data=["text_preprocessed"], title="BBC Sport news dataset")
 ```
