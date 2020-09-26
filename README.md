@@ -26,6 +26,6 @@
 >>> 
 >>> # Plot
 >>> hero.scatterplot(
-... df, 'pca', color='kmeans_labels', hover_data=["text_preprocessed"], title="BBC Sport news dataset")
+... df, 'pca', color='kmeans_labels', hover_data=["text_preprocessed"], title="BBC Sport news dataset"
 ... )
 ```
