@@ -9,9 +9,7 @@
 >>> from flair.embeddings import TransformerDocumentEmbeddings
 >>> 
 >>> # Load an example dataset.
->>> df = pd.read_csv(
-...    "https://github.com/jbesomi/texthero/raw/master/dataset/bbcsport.csv"
-... )[["text"]] # The dataset consists of 737 texts about sports.
+>>> df = pd.read_csv("https://github.com/jbesomi/texthero/raw/master/dataset/bbcsport.csv")[["text"]]
 >>> 
 >>> # Clean and tokenize all documents.
 >>> df['text_preprocessed'] = df['text'].pipe(hero.clean).pipe(hero.tokenize)
