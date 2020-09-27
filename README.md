@@ -17,7 +17,7 @@
 >>> # Calculate a document term matrix (with tfidf)
 >>> df_document_term = df['text_preprocessed'].pipe(hero.tfidf)
 >>> 
->>> # Calculate a document topic matrix (rows are documents, columns are topics, M[i][j] := belonging of document i to topic j)
+>>> # Use LDA to get a matrix relating documents to abstract "topics".
 >>> df_document_topic = hero.lda(df_document_term,n_components=5)
 >>> 
 >>> # Calculate document-topic and topic-term matrix
